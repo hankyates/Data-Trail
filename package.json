@@ -1,0 +1,8 @@
+{
+  "author": "Hank Yates <hankyates@gmail.com>",
+  "name": "datarail",
+  "version": "0.0.0",
+  "dependencies": {
+    "grunt-jasmine-runner": ">= 0.2.3"
+  }
+}
