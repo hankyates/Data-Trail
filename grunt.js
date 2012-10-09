@@ -62,12 +62,18 @@ module.exports = function(grunt) {
     },
     uglify: {},
     jasmine: {
+      src: ['src/*.js',
+           'src/*.js',
+           'src/components/*.js',
+           'src/entities/*.js',
+           'src/interfaces/*.js',
+           'src/scenes/*.js'],
       specs: 'test/*.js'
     }
   });
 
   // Default task.
   grunt.registerTask('default', 'lint concat min');
-  grunt.loadNpmTasks('grunt-jasmine-task');
+  grunt.loadNpmTasks('grunt-jasmine-runner');
 
 };
