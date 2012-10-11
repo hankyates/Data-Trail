@@ -1,9 +1,9 @@
 Crafty.scene("main", function() {
   require([
     "src/entities/tremblay",
-    "src/interfaces/info"
+    "src/interfaces/background"
   ], function() {    
-    sc['tremblay'] = new Tremblay();
-    infc['info'] = new Info();
+    new Tremblay();
+    new Background();
   });
 });

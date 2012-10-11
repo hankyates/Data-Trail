@@ -14,14 +14,10 @@ window.onload = function() {
 
     Crafty.load(sprite_image_paths, function() { // On Load
       require([
-      "src/components/MouseHover",
-      "src/entities/person"
+      "src/components/MouseHover"
       ],function() {
         Crafty.scene('main');
       });// require entities
     });// Crafty load sprites
-
-    Crafty.background('#666');
-
   });// require sprites and scene
 };

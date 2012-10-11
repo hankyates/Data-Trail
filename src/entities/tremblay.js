@@ -1,12 +1,12 @@
 Tremblay = Backbone.Model.extend({
   defaults:{
-    entity: Crafty.e("2D, Canvas, Multiway, Keyboard")
+    entity: Crafty.e("2D, Canvas, Multiway, Keyboard, Tremblay")
   },
   initialize: function(){
     var entity = this.get('entity');
 
     entity
-      .attr({x: 400, y: 400, z: 300, w: 75})
+      .attr({x: 650, y: 20, z: 300, w: 75, h:220})
       .multiway(2, {UP_ARROW: -90, DOWN_ARROW: 90, RIGHT_ARROW: 0, LEFT_ARROW: 180})
       .bind('EnterFrame', function(e){
 
@@ -15,7 +15,5 @@ Tremblay = Backbone.Model.extend({
         
       })
       .setName('Tremblay');
-
-      entity.origin(400, 400);
   }
 });

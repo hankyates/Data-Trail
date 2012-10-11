@@ -23,5 +23,8 @@ Sprite = Backbone.Model.extend({
 TremblaySprite = new Sprite({
   width: 75,
   height: 220,
-  image: 'tremblay.png'
+  image: 'tremblay.png',
+  component: {
+    Tremblay: [0,0]
+  }
 });
