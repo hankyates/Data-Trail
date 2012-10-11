@@ -1,44 +1,27 @@
 window.onload = function() {
-	Crafty.init(800, 600);
+	Crafty.init(1366, 768);
 	Crafty.canvas.init();
 	
 	require([
 	"src/sprite",
-	"src/sprites"
+	"src/sprites",
+  "src/scenes/main"
 	], function() {
-		var sprite = new Sprite(),
-		sprites = new Sprites(sprite),
+		var sprites = new Sprites(TremblaySprite),
 		sprite_image_paths = sprites.map(function(sprite){
 			return sprite.attributes.url();
 		});
 
-		//the loading screen - that will be display while assets loaded
-		Crafty.scene("loading", function() {
-			var loadingText = Crafty.e("2D, Canvas, Text")
-					.attr({w: 500, h: 20, x: ((Crafty.viewport.width) / 2), y: (Crafty.viewport.height / 2), z: 2})
-					.text('Loading...')
-					.textColor('#000')
-					.textFont({'size' : '24px', 'family': 'Arial'});
+    Crafty.load(sprite_image_paths, function() { // On Load
+      require([
+      "src/components/MouseHover",
+      "src/entities/person"
+      ],function() {
+        Crafty.scene('main');
+      });// require entities
+    });// Crafty load sprites
 
-			Crafty.load(sprite_image_paths, function() { // On Load
-				require([
-				"src/components/MouseHover",
-				"src/entities/base/BaseEntity"
-			],function() {
-				loadingText.destroy();
-				Crafty.scene('main');
-				});
-			},
-			function(e) { // On Progress
-				loadingText.text('Loading ('+(e.percent.toFixed(0))+'%)');
-			});
-		});
-		
-		var scenes = [
-			"src/scenes/main"
-		];
-		
-		require(scenes, function(){});
-	Crafty.scene("loading");
-	});
+    Crafty.background('#666');
+
+  });// require sprites and scene
 };

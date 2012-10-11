@@ -6,9 +6,6 @@ Sprite = Backbone.Model.extend({
     image: 'ufo.png',
     url: function(){
       return this.images_path + this.image;
-    },
-    component: {
-      ufo: [0,0]
     }
   },
   initialize: function(){
@@ -21,4 +18,10 @@ Sprite = Backbone.Model.extend({
     );
     return this;
   }
+});
+
+TremblaySprite = new Sprite({
+  width: 75,
+  height: 220,
+  image: 'tremblay.png'
 });
