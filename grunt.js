@@ -23,16 +23,18 @@ module.exports = function(grunt) {
         'test/**/*.js'
       ]
     },
+    requirejs: {
+    },
     concat: {
       dist: {
-        src: ['<banner:meta.banner>', '<file_strip_banner:src/FILE_NAME.js>'],
-        dest: 'dist/datarail.js'
+        src: ['<banner:meta.banner>', '<file_strip_banner:src/public/js/datarail.min.js>'],
+        dest: 'public/js/datarail.js'
       }
     },
     min: {
       dist: {
-        src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-        dest: 'dist/datarail.min.js'
+        src: ['<banner:meta.banner>', '<config:lint.files>','<config:concat.dist.dest>'],
+        dest: 'public/js/datarail.min.js'
       }
     },
     watch: {
@@ -60,7 +62,6 @@ module.exports = function(grunt) {
         Crafty: true
       }
     },
-    uglify: {},
     jasmine: {
       src: ['src/*.js',
            'src/*.js',
@@ -75,5 +76,6 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', 'lint concat min');
   grunt.loadNpmTasks('grunt-jasmine-runner');
+  grunt.loadNpmTasks('grunt-requirejs');
 
 };
