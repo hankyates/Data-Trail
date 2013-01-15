@@ -1,6 +1,6 @@
-Tremblay = Backbone.Model.extend({
+Eve = Backbone.Model.extend({
   defaults:{
-    entity: Crafty.e("2D, Canvas, Multiway, Keyboard, Tremblay")
+    entity: Crafty.e("2D, Canvas, Multiway, Keyboard, Eve")
   },
   initialize: function(){
     var entity = this.get('entity');
@@ -14,6 +14,6 @@ Tremblay = Backbone.Model.extend({
       .bind('Click', function(){
         
       })
-      .setName('Tremblay');
+      .setName('Eve');
   }
 });

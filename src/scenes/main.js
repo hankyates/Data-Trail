@@ -1,9 +1,9 @@
 Crafty.scene("main", function() {
   require([
-    "src/entities/tremblay",
+    "src/entities/eve",
     "src/interfaces/background"
   ], function() {    
-    new Tremblay();
+    new Eve();
     new Background();
   });
 });

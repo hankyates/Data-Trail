@@ -7,7 +7,7 @@ window.onload = function() {
 	"src/sprites",
   "src/scenes/main"
 	], function() {
-		var sprites = new Sprites(TremblaySprite),
+		var sprites = new Sprites(EveSprite),
 		sprite_image_paths = sprites.map(function(sprite){
 			return sprite.attributes.url();
 		});
