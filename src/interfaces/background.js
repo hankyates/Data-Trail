@@ -8,7 +8,7 @@ Background = Backbone.Model.extend({
 
     entity
       .attr({x: 0, y: 0, z: 200, w: 1366, h: 768})
-      .image('public/images/scene_bg_1.png')
+      .image('public/images/scene_1.png')
       .setName('Scene Background');
 
     model.set({'entity' : entity });
