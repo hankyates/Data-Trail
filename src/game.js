@@ -1,5 +1,5 @@
 window.onload = function() {
-	Crafty.init(1024, 576);
+	Crafty.init(1366, 768);
 	Crafty.canvas.init();
 	
 	require([
