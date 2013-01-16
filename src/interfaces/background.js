@@ -1,4 +1,7 @@
-define([],function(){
+define([
+  'backbone',
+  'underscore'
+],function(){
   var Background = Backbone.Model.extend({
 
         defaults: {

@@ -1,7 +1,9 @@
 require([
+  "src/stage",
   "src/entities/eve",
-  "src/interfaces/background"
-], function(Eve, Background) {
+  "src/interfaces/background",
+  "easel"
+], function(stage, Eve, Background) {
   var eve = new Eve(),
       bg = new Background(),
       animation = new createjs.BitmapAnimation(eve.spritesheet),
@@ -14,7 +16,6 @@ require([
   animation.gotoAndPlay('walk_left');
   stage.addChild(animation);
   stage.addChild(text);
-  console.log(stage);
   stage.update();
 
 });

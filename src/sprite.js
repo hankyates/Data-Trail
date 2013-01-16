@@ -1,4 +1,8 @@
-define([], function(){
+define([
+  'easel',
+  'backbone',
+  'underscore'
+], function(){
   var Sprite = Backbone.Model.extend({
     defaults: {
       images_path: 'public/images/',
