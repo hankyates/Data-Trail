@@ -1,16 +1,16 @@
-Background = Backbone.Model.extend({
-  defaults: {
-    entity: null
-  },
-  initialize: function(){
-    var model = this;
-    var entity = Crafty.e("2D, Canvas, Background, Image");
+define([],function(){
+  var Background = Backbone.Model.extend({
 
-    entity
-      .attr({x: 0, y: 0, z: 200, w: 1366, h: 768})
-      .image('public/images/scene_1.png')
-      .setName('Scene Background');
+        defaults: {
 
-    model.set({'entity' : entity });
-  }
+        },
+
+        initialize: function(){
+
+        }
+
+      });
+
+  return Background;
+
 });

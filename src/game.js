@@ -1,23 +1,11 @@
 window.onload = function() {
-	Crafty.init(1024, 576);
-	Crafty.canvas.init();
-	
-	require([
-	"src/sprite",
-	"src/sprites",
-  "src/scenes/main"
-	], function() {
-		var sprites = new Sprites(EveSprite),
-		sprite_image_paths = sprites.map(function(sprite){
-			return sprite.attributes.url();
-		});
 
-    Crafty.load(sprite_image_paths, function() { // On Load
-      require([
-      "src/components/MouseHover"
-      ],function() {
-        Crafty.scene('main');
-      });// require entities
-    });// Crafty load sprites
+  stage = new createjs.Stage(document.getElementById('game'));
+
+  require([
+    "src/sprites",
+    "src/scenes/main"
+  ], function(Sprites) {
+
   });// require sprites and scene
 };
