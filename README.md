@@ -3,6 +3,6 @@
 
 ## A cyberpunk adventure game written in javascript ##
 
-Authors [Hank Yates](http://hankyates.com/) 
-        [Derek Poole](http://derekgpoole.wordpress.com/) 
+Authors [Hank Yates](http://hankyates.com/)
+        [Derek Poole](http://derekgpoole.wordpress.com/)
         Seth Easterly
