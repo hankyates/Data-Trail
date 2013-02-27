@@ -9,7 +9,6 @@ require([
       animation = new createjs.BitmapAnimation(eve.spritesheet),
       text = new createjs.Text('whatever', "36px Arial", "#FFF");
 
-console.log(animation);
   animation.x = 75;
   animation.y = 75;
   text.x = 75;
