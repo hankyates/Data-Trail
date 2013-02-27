@@ -28,8 +28,8 @@ window.onload = function() {
       tween: 'src/libs/tweenjs-0.3.0.min',
       sound: 'src/libs/soundjs-0.3.0.min',
       preload: 'src/libs/preloadjs-0.2.0.min',
-      underscore: 'src/libs/underscore-1.3.4.min',
-      backbone: 'src/libs/backbone-0.9.2.min'
+      underscore: 'src/libs/underscore-1.4.4.amd',
+      backbone: 'src/libs/backbone-0.9.10.amd'
     }   
   });
 
