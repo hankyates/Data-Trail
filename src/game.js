@@ -24,7 +24,7 @@ window.onload = function() {
       }
     },
     paths: {
-      easel: 'src/libs/easeljs-0.5.0.min',
+      easel: 'src/libs/easeljs-0.6.0.min',
       tween: 'src/libs/tweenjs-0.3.0.min',
       sound: 'src/libs/soundjs-0.3.0.min',
       preload: 'src/libs/preloadjs-0.2.0.min',
@@ -37,6 +37,6 @@ window.onload = function() {
     "src/stage",
     "src/scenes/main"
   ], function() {
-
+    createjs.Ticker.addEventListener('tick', stage);
   });// require sprites and scene
 };
