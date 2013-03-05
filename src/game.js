@@ -35,7 +35,6 @@ window.onload = function() {
 
   require([
     "src/stage",
-    "src/sprites",
     "src/scenes/main"
   ], function() {
 

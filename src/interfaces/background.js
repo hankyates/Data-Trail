@@ -1,7 +1,7 @@
 define([
-  'backbone',
-  'underscore'
-],function(){
+  'src/sprite',
+  'backbone'
+],function(Sprite){
   var Background = Backbone.Model.extend({
 
         defaults: {
@@ -9,7 +9,12 @@ define([
         },
 
         initialize: function(){
-
+          this.spritesheet = new Sprite({
+            width: 1024,
+            height: 576,
+            frames: 1,
+            image: 'scene_1.png'
+          }).spritesheet;
         }
 
       });

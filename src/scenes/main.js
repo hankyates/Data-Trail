@@ -6,16 +6,13 @@ require([
 ], function(stage, Eve, Background) {
   var eve = new Eve(),
       bg = new Background(),
-      animation = new createjs.BitmapAnimation(eve.spritesheet),
-      text = new createjs.Text('whatever', "36px Arial", "#FFF");
+      animation = new createjs.BitmapAnimation(eve.spritesheet);
 
-  animation.x = 75;
-  animation.y = 75;
-  text.x = 75;
-  text.y = 75;
+  animation.x = 5;
+  animation.y = 5;
   animation.gotoAndPlay('walk_left');
+  stage.addChild(bg.spritesheet);
   stage.addChild(animation);
-  stage.addChild(text);
   stage.update();
 
 });

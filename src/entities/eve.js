@@ -1,7 +1,6 @@
 define([
   'src/sprite',
-  'backbone',
-  'underscore'
+  'backbone'
 ], function(Sprite){
   var Eve = Backbone.Model.extend({
 
