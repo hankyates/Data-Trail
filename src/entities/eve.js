@@ -1,23 +1,16 @@
 define([
-  'src/sprite',
-  'backbone'
-], function(Sprite){
-  var Eve = Backbone.Model.extend({
-
-        defaults:{
-        }, 
-        
-        initialize: function(){
-          this.spritesheet = new Sprite({
+  'easel'
+], function(){
+  var Eve = function(){
+        this.spritesheet = new createjs.SpriteSheet({
+          images: ['images/eve.png'],
+          frames: {
             width: 75,
-            height: 220,
-            frames: 9,
-            image: 'eve.png',
-            animations: {'walk_right': [0, 9], 'walk_left': [0, 9]}
-          }).spritesheet;
-        }
-
-      });
+            height: 220
+          },
+          animations: {'walk_right': [0, 9], 'walk_left': [0, 9]}
+        });
+      };
 
   return Eve;
 
