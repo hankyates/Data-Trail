@@ -3,7 +3,7 @@
   "name": "datarail",
   "version": "0.0.0",
   "scripts": {
-    "test": "grunt jasmine"
+    "test": "grunt"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
