@@ -36,26 +36,10 @@ module.exports = function(grunt) {
         }
       }
     },
-    concat: {
-      dist: {
-        src: [
-          'src/*.js',
-          'src/**/*.js'
-        ],
-        dest: 'public/js/datatrail.cat.js'
-      }
-    },
-    uglify: {
-      dist: {
-        files: {
-          'public/js/datatrail.min.js': 'public/js/datarail.cat.js'
-        }
-      }
-    },
     watch: {
       files: [ 
-        'src/*.js',
-        'src/**/*.js'
+        '../src/*.js',
+        '../src/**/*.js'
       ],
       tasks: ['jshint', 'jasmine']
     },
@@ -65,7 +49,7 @@ module.exports = function(grunt) {
           'public/js/datatrail.js'
         ],
         options: {
-          specs: 'test/*.js'
+          specs: '../test/*.js'
         }
       }
     },
@@ -80,13 +64,11 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'requirejs', 'jasmine']);
+  grunt.registerTask('default', ['jshint', 'requirejs', 'jasmine']);
 
 };
