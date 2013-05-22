@@ -49,6 +49,10 @@ module.exports = function(grunt) {
           'public/js/datatrail.js'
         ],
         options: {
+          template: require('grunt-template-jasmine-requirejs'),
+          templateOptions: {
+            requireConfigFile: 'public/js/datatrail.js'
+          },
           specs: '../test/*.js'
         }
       }
