@@ -13,6 +13,9 @@ module.exports = function(grunt) {
         'Hank Yates; Licensed MIT */'
     },
     jshint: {
+      options: {
+        shadow: false
+      },
       all: [
         'src/*.js',
         'src/**/*.js',
@@ -38,22 +41,19 @@ module.exports = function(grunt) {
     },
     watch: {
       files: [ 
-        '../src/*.js',
-        '../src/**/*.js'
+        'test/*.js',
+        'src/*.js',
+        'src/**/*.js'
       ],
-      tasks: ['jshint', 'jasmine']
+      tasks: ['jshint','requirejs', 'jasmine']
     },
     jasmine: {
       all:{
-        src: [
-          'public/js/datatrail.js'
-        ],
+        src: 'public/js/datatrail.js',
         options: {
-          template: require('grunt-template-jasmine-requirejs'),
-          templateOptions: {
-            requireConfigFile: 'public/js/datatrail.js'
-          },
-          specs: '../test/*.js'
+          keepRunner: true,
+          specs: 'test/*.js',
+          template: require('grunt-template-jasmine-requirejs')
         }
       }
     },
@@ -62,6 +62,13 @@ module.exports = function(grunt) {
         options: {
           port: 9001,
           base: 'public'
+        }
+      },
+      test: {
+        options: {
+          port: 8080,
+          hostname: null,
+          keepalive: true
         }
       }
     }

@@ -2,16 +2,17 @@ require([
   "src/stage",
   "src/entities/eve",
   "easel"
-], function(stage, Eve, Background) {
-  var eve = new Eve(),
-      bg = new createjs.Bitmap('public/images/scene_1.png'),
-      animation = new createjs.BitmapAnimation(eve.spritesheet);
+], function(stage, Eve) {
+  var eve = new Eve({
+        x: 550,
+        y: 275
+      }),
+      background = new createjs.Bitmap('images/scene_1.png');
 
-  animation.x = 5;
-  animation.y = 5;
-  animation.gotoAndPlay('walk_left');
-  stage.addChild(bg);
-  stage.addChild(animation);
+  this.eve = eve;
+  stage.addChild(background);
+  stage.addChild(eve.animation);
+  stage.update();
   stage.update();
 
 });
