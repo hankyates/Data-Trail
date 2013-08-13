@@ -13,62 +13,58 @@ module.exports = function(grunt) {
         'Hank Yates; Licensed MIT */'
     },
     jshint: {
-      options: {
-        shadow: false
-      },
       all: [
-        'src/*.js',
-        'src/**/*.js',
+        'app/src/**/*.js',
         'test/**/*.js'
       ]
     },
     requirejs: {
       compile: {
         options: {
-          baseUrl: '.',
-          paths: {
-            easel: 'lib/easeljs-0.6.0.min',
-            tween: 'lib/tweenjs-0.3.0.min',
-            sound: 'lib/soundjs-0.3.0.min',
-            preload: 'lib/preloadjs-0.2.0.min',
-            underscore: 'lib/underscore-1.4.4.amd',
-            backbone: 'lib/backbone-0.9.10.amd'
+          name: 'require-config',
+          mainConfigFile: 'app/require-config.js',
+          out: 'public/js/datatrail-min.js',
+          optimize: 'none',
+          shim: {
+            easel: {
+              exports: 'createjs'
+            }
           },
-          name: 'src/game',
-          out: 'public/js/datatrail.js'
+          paths: {
+            easel: 'lib/easeljs-0.6.0.min'
+          }
         }
       }
     },
     watch: {
       files: [ 
-        'test/*.js',
-        'src/*.js',
-        'src/**/*.js'
+        'public/js/src/**/*.js',
+        'test/**/*.js'
       ],
       tasks: ['jshint','requirejs', 'jasmine']
     },
     jasmine: {
       all:{
-        src: 'public/js/datatrail.js',
         options: {
+          specs: 'test/**/*.js',
           keepRunner: true,
-          specs: 'test/*.js',
-          template: require('grunt-template-jasmine-requirejs')
+          host: null,
+          template: require('grunt-template-jasmine-requirejs'),
+          templateOptions: {
+            requireConfigFile: 'app/require-config.js',
+            requireConfig: {
+              baseUrl: 'app'
+            }
+          }
         }
       }
     },
     connect: {
       server: {
         options: {
-          port: 9001,
-          base: 'public'
-        }
-      },
-      test: {
-        options: {
-          port: 8080,
-          hostname: null,
-          keepalive: true
+          port: 8000,
+          keepalive: true,
+          hostname: null
         }
       }
     }
